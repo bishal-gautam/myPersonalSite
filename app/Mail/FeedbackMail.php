@@ -7,28 +7,18 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class emails extends Mailable
+class FeedbackMail extends Mailable
 {
     use Queueable, SerializesModels;
-    public $msg;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($name,$subject,$message,$email)
+    public function __construct()
     {
-
-        $data=array(
-            'name'=> $name,
-            'subject'=> $subject,
-            'message'=> $message,
-            'email'=> $email
-        );
-
-        $this->msg=join(" ### ",$data);
-
+        //
     }
 
     /**
@@ -38,7 +28,7 @@ class emails extends Mailable
      */
     public function build()
     {
-        return $this->from('bsal.gautam16@gmail.com')
-                    ->view('emails.emailTemplate');
+        return $this->from('bishal@devskill.com')
+               ->view('emails.welcome');
     }
 }

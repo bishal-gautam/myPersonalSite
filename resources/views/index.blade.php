@@ -482,7 +482,7 @@
           <div class="col-md-6">
             <div class="contact-form">
               <strong>Send me a message</strong>
-          <form name="contact-form" id="contactForm" action="{{ route('sendmail') }}" method="POST" onsubmit="window.location.reload();">
+          <form name="contact-form" id="contactForm" action="{{ action('HomeController@welcomeMail') }}" method="POST" onsubmit="window.location.reload();">
 
                 <div class="form-group">
                   <label for="name">Name</label>

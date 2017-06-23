@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('index');
 });
 
+/*
+Route::post('contact','HomeController@postContact');
+
 Route::post('/sendmail',
 	function( \Illuminate\Http\Request $request, 
 	\Illuminate\Mail\Mailer $mailer ) {
@@ -34,3 +37,7 @@ Route::post('/sendmail',
 	}
 
 )->name('sendmail');
+*/
+
+Route::post('fm','HomeController@welcomeMail');
+
